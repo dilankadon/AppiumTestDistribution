@@ -55,15 +55,12 @@ public class DeviceCapabilityManager {
             throws InterruptedException,IOException {
         DesiredCapabilities iOSCapabilities = new DesiredCapabilities();
         System.out.println("Setting iOS Desired Capabilities:");
-        iOSCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,
-            "iOS");
-        iOSCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
-                 "10.0");
-        iOSCapabilities.setCapability(MobileCapabilityType.APP,
-                configurationManager.getProperty("IOS_APP_PATH"));
+        iOSCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"iOS");
+        iOSCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.2");
+        iOSCapabilities.setCapability(MobileCapabilityType.APP, configurationManager.getProperty("IOS_APP_PATH"));
         iOSCapabilities.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS, true);
-        iOSCapabilities
-                .setCapability(MobileCapabilityType.DEVICE_NAME,"iPhone");
+        iOSCapabilities.setCapability("automationName","XCUITest");
+        iOSCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"iPhone");
         iOSCapabilities.setCapability(MobileCapabilityType.UDID, device_udid);
         return iOSCapabilities;
     }
