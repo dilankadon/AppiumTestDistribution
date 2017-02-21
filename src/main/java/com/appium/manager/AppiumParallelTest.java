@@ -100,16 +100,16 @@ public class AppiumParallelTest extends TestListenerAdapter implements ITestList
         if (device.isEmpty()) {
             System.out.println("Into Empty devices");
             device_udid = deviceManager.getNextAvailableDeviceId();
-            System.out.println("Into block" + device_udid);
+            System.out.println("Into block" + device_udid + "\n");
         } else {
             device_udid = device;
         }
-        System.out.println("Devices*******" + device_udid);
+        System.out.println("Devices*******" + device_udid + "\n");
         if (device_udid == null) {
             System.out.println("No devices are free to run test or Failed to run test");
             return null;
         }
-        System.out.println("****************Device*************" + device_udid);
+        System.out.println("****************Device*************" + "\n" + device_udid);
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             getDeviceCategory();
         } else {
